@@ -788,7 +788,7 @@ button{
     }
 
     .section{
-      padding: 0rem;
+      padding: 0;
     }
 
     .home__img{
@@ -812,7 +812,7 @@ button{
 @media screen and (min-width:330px){
 
   .section{
-    padding: 0rem;
+    padding: 0.5rem;
   }
 }
 
@@ -844,7 +844,7 @@ button{
     }
   
     .section{
-      padding: 6rem 0 2rem;
+      padding: 7rem 0 2rem;
     }
   
     .nav{
