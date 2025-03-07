@@ -787,6 +787,10 @@ button{
         margin-right: var(--mb-1);
     }
 
+    .section{
+      padding: 0;
+    }
+
     .home__img{
         height: 200px;
 
@@ -805,6 +809,13 @@ button{
     }
 }
 
+@media screen and (min-width:330px){
+
+  .section{
+    padding: 0;
+  }
+}
+
 /* For medium devices */
 @media screen and (min-width: 576px){
     .about__container{
@@ -820,6 +831,11 @@ button{
     .newsletter__description{
       padding: 0 3rem;
     }
+
+    .section{
+      padding: 0;
+    }
+
   }
 
   @media screen and (min-width: 767px){
