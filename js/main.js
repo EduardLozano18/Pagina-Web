@@ -94,8 +94,8 @@ let newSwiper = new Swiper(".new-swiper", {
 const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
-    duration: 2000,
-    delay: 400,
+    duration: 1500,
+    delay: 300,
     // reset: true
 })
 
@@ -103,3 +103,43 @@ sr.reveal(`.home-swiper, .new-swiper, .newsletter__container`)
 sr.reveal(`.category__data, .trick__content, .footer__content`,{interval: 100})
 sr.reveal(`.about__data, .discount__img`,{origin: 'left'})
 sr.reveal(`.about__img, .discount__data`,{origin: 'right'})
+
+
+/*Carrito de compras */
+const listProducts = document.querySelector('#trick');
+const listProduct = document.querySelector('#new');
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    EventListener();
+
+});
+
+function EventListener(){
+   listProducts.addEventListener('click', getDataElements);
+   listProduct.addEventListener('click', getDataElements);
+
+}
+
+function getDataElements(event){
+    if(event.target.classList.contains('bx-cart-alt')) {
+        const elementHTML = event.target.parentElement.parentElement;
+        selectData(elementHTML);
+    };
+}
+
+function selectData(product){
+    const productOBJ = {
+        img: product.querySelector('img').src,
+        title: product.querySelector('h3').textContent,
+        price: parseFloat(product.querySelector('.new__price , .trick__price').textContent.replace('$', '')),
+        id: product.querySelector('button[type="button"]').id
+    }
+
+    console.log(productOBJ)
+}
+
+// function getDataElements(e){
+//     console.log(e.target.classList);
+// }
