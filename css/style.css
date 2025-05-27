@@ -612,6 +612,195 @@ button{
     right: 0;
   }
 
+
+  /* Carrito */
+/* Estilos base */
+
+
+.navigation {
+    padding: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation .logotipo {
+    font-size: 4rem;
+    color: rgb(143, 8, 8);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.navigation .logotipo span {
+    font-weight: 200;
+    color: chartreuse;
+    font-size: 4rem;
+}
+
+.navigation button {
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+}
+
+.navigation button .icon-cart {
+    font-size: 2.6rem;
+    color: chartreuse;
+}
+
+.navigation span {
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+/* Estilos del carrito (.cart) */
+.cart {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    right: -1rem;
+    top: 3rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border-radius: 0.8rem;
+    z-index: 10;
+}
+
+/* Media query para .cart (no anidada) */
+@media (min-width: 1400px) {
+    .cart {
+        right: -20rem;
+    }
+}
+
+.cart table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart thead {
+    border-bottom: 1px solid white;
+}
+
+.cart thead th {
+    padding: 1rem;
+    color: #f7f8f9;
+}
+
+.cart tbody tr {
+    padding: 2rem 0;
+}
+
+.cart tbody td {
+    color: #f7f8f9;
+    padding: 1rem;
+}
+
+.cart tbody td img {
+    width: 10rem;
+}
+
+.cart tbody td p {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.cart tbody td input {
+    width: 6rem;
+    background-color: transparent;
+    border: 1px solid #f7f8f9;
+    padding: 0.7rem;
+    color: #f7f8f9;
+    border-radius: 0.5rem;
+}
+
+.cart tbody td input:focus,
+.cart tbody td input:active {
+    outline: none;
+}
+
+.cart tbody td button {
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    background-color: #dc2626;
+    color: #f7f8f9;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cart tfoot .total {
+    text-align: right;
+    padding-bottom: 2rem;
+}
+
+.cart tfoot .total .heading-total {
+    color: white;
+}
+
+.cart tfoot .total .heading-total span {
+    margin-left: 0.5rem;
+}
+
+.cart tfoot td button {
+    width: 100%;
+    background-color: rgba(207, 60, 60, 0.75);
+    padding: .7rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: #404040;
+    font-weight: 700;
+    margin: 10px;
+
+}
+
+.cart tfoot td #Pago {
+    color: #161513;
+    background-color: rgba(255, 255, 255, 0.877);
+}
+
+
+/* Estilos para .btn-cart y hover */
+.btn-cart {
+    position: relative;
+    
+}
+
+.btn-cart:hover .cart {
+    display: block;
+    opacity: 1;
+}
+
+/* Estilos para .alert */
+.alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 45px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    text-align: center;
+    z-index: 1000;
+    animation: fadeInOut 5s ease forwards;
+    font-size: 2rem;
+}
+
+.alert.error {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.alert.success {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+
+
   /*======================== NESLETTER ======================*/
   .newsletter__description{
     text-align: center;
