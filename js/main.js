@@ -276,3 +276,27 @@ function destroyprodct(idproduct){
 
         setTimeout(() => div.remove(), 1000);
     }
+
+
+function finalizarCompra() {
+    if (productsArray.length === 0) {
+        showAlert('No hay productos en el carrito', 'error');
+        return;
+    }
+    
+    console.log("Productos a guardar:", productsArray); // ← Verifica esto en la consola (F12)
+
+    
+    // Guardamos los productos en localStorage
+    localStorage.setItem('products', JSON.stringify(productsArray));
+    
+    // Redirigimos a la página de pago
+    window.location.href = "pago.html";
+
+}
+
+// Y el evento del botón debe ser:
+document.getElementById('finalizarCompra').addEventListener('click', finalizarCompra);
+
+
+/*----------------------------------------------------------------------------- */

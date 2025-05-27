@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+    <div class="checkout-container">
+        <!-- Resumen de Compra (Derecha) -->
+        <div class="order-summary">
+            <h2>Resumen del pedido</h2>
+            <div id="resumen-productos" class="product-list"></div>
+            <div class="order-total">
+                <p>Total: <span id="total-pagar">$0.00</span></p>
+            </div>
+        </div>
+
+        <!-- Formulario de Pago (Izquierda) -->
+        <div class="payment-form">
+            <!-- Paso 1: Dirección de Envío -->
+            <section class="form-section">
+                <h2>1. Dirección de envío</h2>
+                <form id="shipping-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ciudad">Ciudad</label>
+                            <input type="text" id="ciudad" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <input type="text" id="estado" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cp">Código Postal</label>
+                            <input type="text" id="cp" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" required>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Paso 2: Método de Pago -->
+            <section class="form-section">
+                <h2>2. Método de pago</h2>
+                <div class="payment-methods">
+                    <div class="payment-method active">
+                        <input type="radio" name="metodo-pago" id="tarjeta" checked>
+                        <label for="tarjeta">Tarjeta de crédito/débito</label>
+                        <div class="payment-details">
+                            <div class="form-group">
+                                <label for="numero-tarjeta">Número de tarjeta</label>
+                                <input type="text" id="numero-tarjeta" placeholder="1234 5678 9012 3456">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fecha-exp">Fecha exp.</label>
+                                    <input type="text" id="fecha-exp" placeholder="MM/AA">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" placeholder="123">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment-method">
+                        <input type="radio" name="metodo-pago" id="paypal">
+                        <label for="paypal">PayPal</label>
+                    </div>
+
+                    <div class="payment-method">
+                        <input type="radio" name="metodo-pago" id="transferencia">
+                        <label for="transferencia">Transferencia bancaria</label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Botón de Confirmación -->
+            <button id="confirmar-pago" class="btn-confirm">Confirmar y pagar</button>
+        </div>
+    </div>
+
+    <script src="js/pago.js"></script>
+</body>
+</html>

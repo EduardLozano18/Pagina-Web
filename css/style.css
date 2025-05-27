@@ -800,6 +800,26 @@ button{
 }
 
 
+/* Estilos para la página de pago */
+#resumen-productos {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.producto-carrito {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+    .producto-carrito .d-flex {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
 
   /*======================== NESLETTER ======================*/
   .newsletter__description{
@@ -1245,6 +1265,8 @@ button{
       left: -3%;
     }
   }
+
+
 
 
 
