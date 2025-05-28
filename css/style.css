@@ -156,6 +156,7 @@ button{
     height: var(--header-height);
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .nav__logo{
@@ -626,7 +627,7 @@ button{
 
 .navigation .logotipo {
     font-size: 4rem;
-    color: rgb(143, 8, 8);
+    color: rgb(158, 126, 126);
     font-family: "Poppins", sans-serif;
     font-weight: 400;
 }
@@ -659,13 +660,16 @@ button{
     display: none;
     position: absolute;
     opacity: 0;
-    right: -1rem;
-    top: 3rem;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
+    right: -1.5rem;
+    top: 2rem;
+    background-color:rgba(40, 40, 40, 0.7);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 0.8rem;
     z-index: 10;
+    transition: all 0.3s ease;
+    align-items: center;
 }
 
 /* Media query para .cart (no anidada) */
@@ -725,7 +729,7 @@ button{
     border: none;
     width: 3rem;
     height: 3rem;
-    background-color: #dc2626;
+    background-color: #f44336;
     color: #f7f8f9;
     border-radius: 50%;
     cursor: pointer;
@@ -746,7 +750,8 @@ button{
 
 .cart tfoot td button {
     width: 100%;
-    background-color: rgba(207, 60, 60, 0.75);
+    background-color: #e0e0e0;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
     padding: .7rem;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -817,6 +822,23 @@ button{
         flex-direction: column;
         gap: 10px;
     }
+}
+
+/* boton pedidos */
+.boton-pedidos {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    background: #f3a847;
+    color: #111;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.boton-pedidos:hover {
+    background: #e7962f;
 }
 
 

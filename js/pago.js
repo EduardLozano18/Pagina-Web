@@ -60,3 +60,25 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'index.html';
     });
 });
+
+
+document.getElementById('confirmar-pago').addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    // 1. Crear objeto del pedido
+    const pedido = {
+        id: Date.now(),
+        fecha: new Date().toLocaleDateString('es-MX'),
+        productos: JSON.parse(localStorage.getItem('products')),
+        total: document.getElementById('total-pagar').textContent,
+        estado: "Completado"
+    };
+
+    // 2. Guardar en historial
+    const historialPedidos = JSON.parse(localStorage.getItem('historialPedidos')) || [];
+    localStorage.setItem('historialPedidos', JSON.stringify([...historialPedidos, pedido]));
+
+    // 3. Limpiar carrito y redirigir
+    localStorage.removeItem('products');
+    window.location.href = 'index.html?pedido_exitoso=true';
+});

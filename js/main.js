@@ -300,3 +300,29 @@ document.getElementById('finalizarCompra').addEventListener('click', finalizarCo
 
 
 /*----------------------------------------------------------------------------- */
+
+// Función para guardar pedidos
+function guardarPedido(datosPedido) {
+    const pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+    pedidos.push(datosPedido);
+    localStorage.setItem('pedidos', JSON.stringify(pedidos));
+}
+
+// Modifica tu función de confirmar pago (en pago.js)
+document.getElementById('confirmar-pago').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    // Datos del pedido (ejemplo)
+    const datosPedido = {
+        id: Date.now(), // ID único
+        fecha: new Date().toLocaleString(),
+        productos: JSON.parse(localStorage.getItem('products')),
+        total: document.getElementById('total-pagar').textContent,
+        direccion: document.getElementById('direccion').value,
+        estado: "Completado"
+    };
+
+    guardarPedido(datosPedido); // Guardar en historial
+    localStorage.removeItem('products'); // Limpiar carrito
+    window.location.href = 'index.html?pedido_completado=true'; // Redirigir con parámetro
+});
